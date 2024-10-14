@@ -45,7 +45,7 @@ jobs:
         with:
           github_token: ${{ secrets.PAT }}
           upload_url: ${{ fromJSON(inputs.manifest)[format('{0}--upload_url', inputs.path)] }}
-          asset_path: ./${{ inputs.path }}/target/*.jar
+          asset_path: ./${{ inputs.path }}/target/*-shaded.jar
           asset_content_type: application/java-archive
           overwrite: true
       - name: Publish to GitHub Packages
